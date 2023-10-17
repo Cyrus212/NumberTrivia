@@ -23,3 +23,12 @@ header {
     justify-content: space-between;
 
 }
+
+/* Current date */
+.currentDate {
+    display: inline;
+    font-size: 20px;
+    text-align: start;
+    width: 100px;
+    height: 50px;
+}

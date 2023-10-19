@@ -7,23 +7,48 @@ $(document).ready(function () {
 	};
 	displayDate();
 
-	var number = 1893; // Set as user number input
-	var type = "math";
-	var apiUrl = `http://numbersapi.com/${number}/${type}`;
 
-	fetch(apiUrl)
-		.then((response) => {
-			if (!response.ok) {
-				throw new Error(
-					`Failed to fetch data. Status code: ${response.status}`
-				);
-			}
-			return response.text();
-		})
-		.then((data) => {
-			console.log(data); // Print the fact
-		})
-		.catch((error) => {
-			console.error(error);
-		});
+	$("#date").on("click", function () {
+		var number = "random"; // Set as user number input
+		var type = "date";
+		var apiUrl = `http://numbersapi.com/${number}/${type}`;
+
+		fetch(apiUrl)
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(
+						`Failed to fetch data. Status code: ${response.status}`
+					);
+				}
+				return response.text();
+			})
+			.then((data) => {
+				console.log(data); // Print the fact
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	});
+
+	$("#trivia").on("click", function () {
+		var number = "random"; // Set as user number input
+		var type = "trivia";
+		var apiUrl = `http://numbersapi.com/${number}/${type}`;
+
+		fetch(apiUrl)
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(
+						`Failed to fetch data. Status code: ${response.status}`
+					);
+				}
+				return response.text();
+			})
+			.then((data) => {
+				console.log(data); // Print the fact
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	});
 });

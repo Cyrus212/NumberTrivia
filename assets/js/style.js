@@ -7,10 +7,10 @@ $(document).ready(function () {
 	};
 	displayDate();
 
+	var number = "random";
 
-	$("#date").on("click", function () {
-		var number = "random"; // Set as user number input
-		var type = "date";
+	// Function to fetch and display data for a given number and type
+	function fetchDataAndDisplay(type) {
 		var apiUrl = `http://numbersapi.com/${number}/${type}`;
 
 		fetch(apiUrl)
@@ -23,32 +23,30 @@ $(document).ready(function () {
 				return response.text();
 			})
 			.then((data) => {
-				console.log(data); // Print the fact
+				var infoBox = document.querySelector(".infoBox");
+				infoBox.innerHTML = "";
+
+				var info = document.createElement("div");
+				info.classList.add(`info${number}`);
+				info.innerHTML = `<p>${data}</p>`;
+				infoBox.appendChild(info);
 			})
 			.catch((error) => {
 				console.error(error);
 			});
+	}
+
+	$("#date").on("click", function () {
+		var type = "date";
+		fetchDataAndDisplay(type);
 	});
 
 	$("#trivia").on("click", function () {
-		var number = "random"; // Set as user number input
 		var type = "trivia";
-		var apiUrl = `http://numbersapi.com/${number}/${type}`;
-
-		fetch(apiUrl)
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(
-						`Failed to fetch data. Status code: ${response.status}`
-					);
-				}
-				return response.text();
-			})
-			.then((data) => {
-				console.log(data); // Print the fact
-			})
-			.catch((error) => {
-				console.error(error);
-			});
+		fetchDataAndDisplay(type);
 	});
+
+	$(".submit").on("click", function () {
+    var numberClass = $(`.info${number}`).attr("class");
+  });
 });

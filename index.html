@@ -1,72 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Number Trivia!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link href="assets/css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <!--Section holds title of page-->
-  <section class="section has-text-centered">
-    <div class="container">
-      <h1 class="title has-text-white">
-        Number Trivia
-      </h1>
-      <p class="subtitle has-text-grey-light">
-        Learn with <strong class="brick has-text-white">Numbers</strong>!
-      </p>
-    </div>
-  </section>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Number Trivia!</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+		/>
+		<link href="assets/css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--Section holds title of page-->
+		<section class="section has-text-centered">
+			<div class="container">
+				<h1 class="title has-text-white">Number Trivia</h1>
+				<p class="subtitle has-text-grey-light">
+					Learn with
+					<strong class="brick has-text-white">Numbers</strong>!
+				</p>
+			</div>
+		</section>
 
-  <!--section hold elements on page excluding date-->
-  <section class="hero">
+		<!--section hold elements on page excluding date-->
+		<section class="hero">
+			<div class="buttons">
+				<button id="date" class="button">Date</button>
+				<button id="trivia" class="button">Trivia</button>
+			</div>
 
-      <div class="buttons">
-        <button id="date" class="button">Date</button>
-        <button id="trivia" class="button">Trivia</button>
-      </div>
+			<!--Container for API number and fact input-->
+			<div class="flex">
+				<div class="hero-body">
+					<div class="box infoBox has-text-white">Lets go skydiving!</div>
+				</div>
 
-      <!--Container for API number and fact input-->
-    <div class="flex">
+				<!--Table holds facts created/saved by user-->
+				<div class="table-container has-text-white">
+					<table class="table has-text-white">
+						<thead>
+							<tr>
+								<b>Facts</b>
+							</tr>
+						</thead>
+						<tbody>
+							<!--Save click function will generate table columns based on input information-->
+						</tbody>
+					</table>
+				</div>
+			</div>
 
-      <div class="hero-body">
-        <div class="box infoBox has-text-white">
-            Lets go skydiving!
-        </div>
-      </div>
+			<div class="factInput">
+				<input
+					id="userFact"
+					class="input is-rounded factInput"
+					type="text"
+					maxlength="100"
+					placeholder="Write a fact"
+				/>
+				<button class="button is-rounded has-text-white save">Save</button>
+			</div>
 
-      <!--Table holds facts created/saved by user-->
-      <div class="table-container has-text-white">
-        <table class="table has-text-white">
-          <thead>
-            <tr><b>Facts</b></tr>
-          </thead>
-          <tbody>
-            <!--Save click function will generate table columns based on input imformation-->
-          </tbody>
-        </table>
-      </div>
+			<div class="numberInput">
+				<input
+					id="numInput"
+					class="input is-rounded factInput"
+					type="text"
+					maxlength="100"
+					placeholder="Write a number"
+				/>
+				<button class="button is-rounded has-text-white inputNumber">Enter</button>
+			</div>
 
-    </div>
-    
-    <div class="factInput">
-      <input id="userFact" class="input is-rounded factInput" type="text" maxlength="100" placeholder="Write a fact">
-      <button class="button is-rounded has-text-white save">Save</button>
-    </div>
-
-    <a id="currentDay" class="currentDate has-text-grey-light"></a>
-
-  </section>
-  <!--Link for dayJS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--Link for jQuery-->
-  <script
-    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous"
-  ></script>
-  <script src="assets/js/style.js"></script>
-  </body>
+			<a id="currentDay" class="currentDate has-text-grey-light"></a>
+		</section>
+		<!--Link for dayJS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!--Link for jQuery-->
+		<script
+			src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+			integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+			crossorigin="anonymous"
+		></script>
+		<script src="assets/js/style.js"></script>
+	</body>
 </html>

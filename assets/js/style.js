@@ -50,6 +50,7 @@ $(document).ready(function () {
     var numberClass = $(`.info${number}`).attr("class");
   });
 
+  //Saves userInput/Fact to Facts Table
   $(".save").on("click", function () {
 	var userInput = $("#userFact").val();
 
@@ -59,8 +60,24 @@ $(document).ready(function () {
 
     localStorage.setItem("Fact", userInput);
 
-	$("tbody").append(`<tr><td> ${userInput} </td></tr>`)
+	$("tbody").append(`<tr><td><a id='userData'> ${userInput} </a></td></tr>`)
 
 	$("#userFact").val("")
-  })
+  });
+
+  //On click, infoBox will clear, data from table will display, and repeat clicks will be disabled 
+  $('tbody').on('click', 'td:not(.disabled)', function () {
+    $('.infoBox').html('');
+    var rowData = $(this).text();
+
+    $('.infoBox').append(rowData);
+
+    $(this).addClass("disabled");
+  });
+
+  //Button will clear infoBox when clicked
+  $('#clear').on('click', function () {
+    $('.infoBox').html('');
+  });
+
 });

@@ -57,6 +57,8 @@ $(document).ready(function () {
 		return 
 	}
 
+    localStorage.setItem("Fact", userInput);
+
 	$("tbody").append(`<tr><td> ${userInput} </td></tr>`)
 
 	$("#userFact").val("")

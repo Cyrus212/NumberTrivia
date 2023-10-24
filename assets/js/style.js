@@ -49,4 +49,16 @@ $(document).ready(function () {
 	$(".submit").on("click", function () {
     var numberClass = $(`.info${number}`).attr("class");
   });
+
+  $(".save").on("click", function () {
+	var userInput = $("#userFact").val();
+
+	if (userInput === "") {
+		return 
+	}
+
+	$("tbody").append(`<tr><td> ${userInput} </td></tr>`)
+
+	$("#userFact").val("")
+  })
 });

@@ -1,37 +1,85 @@
+:root {
+    --dark-color: #121B22;
+    --bluish-color: #204254;
+    --brick-color: #B94A3E;
+}
+
 body {
-	background-color: orange;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #121B22;
 }
 
-header {
-	text-align: center;
+tbody {
+    inline-size: 150px;
+    word-break: break-all;
 }
 
-.content {
-	border: 1px dotted red;
+.brick{
+    background-color: #B94A3E;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.flex {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 }
 
-/* Current date */
+.hero {
+        background-image: linear-gradient(to bottom right, var(--dark-color), var(--brick-color), var(--dark-color));
+    border-radius: 30px;
+    height: 80%;
+}
+
+.buttons {
+    display: flex;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+
+.box {
+    height: 300px;
+    width: 650px;
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: var(--dark-color);
+    font-size: 30px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.table-container {
+    height: 250px;
+    width: 300px;
+    margin-right: 150px;
+    overflow: scroll;
+}
+
+.table {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.factInput {
+    height: 30px;
+    width: 60%;
+    margin-left: 35px;
+    margin-bottom: 100px;
+}
+
+.save {
+    transform: translateY(-12%);
+    margin-left: 35px;
+    background-color: var(--dark-color);
+    border: solid;
+}
+
 .currentDate {
-    display: inline;
+    text-align: center;
     font-size: 20px;
-    text-align: start;
-    width: 100px;
-    height: 50px;
-}
-
-.randombtns {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-}
-
-.infoContainer {
-    width: 75%;
-}
-
-.infoBox {
-	width: 85%;
-	border: 1px dotted purple;
 }

@@ -8,40 +8,40 @@ $(document).ready(function () {
 	displayDate();
 
 	var number = "random";
-	var factNumber = '';
+	var factNumber = "";
 
 	// Function to fetch and display data for a given number and type
 	function fetchDataAndDisplay(type) {
 		var apiUrl = `http://numbersapi.com/${number}/${type}?json`;
 
 		fetch(apiUrl)
-				.then((response) => {
-					// Checks for response errors
-						if (!response.ok) {
-								throw new Error(
-										`Failed to fetch data. Status code: ${response.status}`
-								);
-								}
-						return response.json();
-				})
-				.then((data) => {
-						var infoBox = document.querySelector(".infoBox");
-						infoBox.innerHTML = "";
+			.then((response) => {
+				// Checks for response errors
+				if (!response.ok) {
+					throw new Error(
+						`Failed to fetch data. Status code: ${response.status}`
+					);
+				}
+				return response.json();
+			})
+			.then((data) => {
+				var infoBox = document.querySelector(".infoBox");
+				infoBox.innerHTML = "";
 
-						// Creates new div containing data information in text format for the user to see
-						var info = document.createElement("div");
-						info.classList.add(`info${number}`);
-						info.innerHTML = `<p>${data.text}</p>`;
-						infoBox.appendChild(info);
+				// Creates new div containing data information in text format for the user to see
+				var info = document.createElement("div");
+				info.classList.add(`info${number}`);
+				info.innerHTML = `<p>${data.text}</p>`;
+				infoBox.appendChild(info);
 
-						// Getting the number value pulled from the api call
-						factNumber = data.number;
-				})
-				// Checks for errors and displays them in the console if any are found
-				.catch((error) => {
-						console.error(error);
-				});
-}
+				// Getting the number value pulled from the api call
+				factNumber = data.number;
+			})
+			// Checks for errors and displays them in the console if any are found
+			.catch((error) => {
+				console.error(error);
+			});
+	}
 
 	// Date button on-click event function
 	$("#date").on("click", function () {
@@ -57,11 +57,11 @@ $(document).ready(function () {
 
 	//Save button on-click event function
 	$(".save").on("click", function () {
-			var numberClass = $(`.info${number}`).attr("class");
-			var saveText = $("#userFact").val();
-			localStorage.setItem(numberClass, saveText);
-			$("tbody").append(`<tr><td> ${factNumber}: ${saveText} </td></tr>`);
-			$("#userFact").val("");
+		var numberClass = $(`.info${number}`).attr("class");
+		var saveText = $("#userFact").val();
+		localStorage.setItem(numberClass, saveText);
+		$("tbody").append(`<tr><td> ${factNumber}: ${saveText} </td></tr>`);
+		$("#userFact").val("");
 	});
 
 	$(".inputNumber").on("click", function () {
@@ -72,5 +72,12 @@ $(document).ready(function () {
 			$("tbody").append(`<tr><td> ${factNumber} ${savedText} </td></tr>`);
 			$("#userFact").val("");
 		}
+	});
+
+	const saveButton = document.getElementById("save");
+	const favDialog = document.getElementById("saveDialog");
+
+	saveButton.addEventListener("click", () => {
+		favDialog.showModal();
 	});
 });

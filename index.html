@@ -58,8 +58,17 @@
 					maxlength="100"
 					placeholder="Write a fact"
 				/>
-				<button class="button is-rounded has-text-white save">Save</button>
+				<button class="button is-rounded has-text-white save" id="save">
+					Save
+				</button>
 			</div>
+
+			<dialog id="saveDialog">
+				<form method="dialog">
+					<p>Your info has been submitted! Check the Facts box on the right!</p>
+					<button>Close dialog</button>
+				</form>
+			</dialog>
 
 			<div class="numberInput">
 				<input
@@ -69,7 +78,9 @@
 					maxlength="100"
 					placeholder="Write a number"
 				/>
-				<button class="button is-rounded has-text-white inputNumber">Enter</button>
+				<button class="button is-rounded has-text-white inputNumber">
+					Enter
+				</button>
 			</div>
 
 			<a id="currentDay" class="currentDate has-text-grey-light"></a>

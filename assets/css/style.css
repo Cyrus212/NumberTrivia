@@ -1,7 +1,7 @@
 :root {
-    --dark-color: #121B22;
-    --bluish-color: #204254;
-    --brick-color: #B94A3E;
+	--dark-color: #121b22;
+	--bluish-color: #204254;
+	--brick-color: #b94a3e;
 }
 
 body {
@@ -13,20 +13,20 @@ body {
 }
 
 tbody {
-    inline-size: 150px;
-    word-break: break-all;
+	inline-size: 150px;
+	word-break: break-all;
 }
 
-.brick{
-    background-color: #B94A3E;
-    border-radius: 5px;
-    font-size: 25px;
+.brick {
+	background-color: #b94a3e;
+	border-radius: 5px;
+	font-size: 25px;
 }
 
 .flex {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .hero {
@@ -37,47 +37,54 @@ tbody {
 }
 
 .buttons {
-    display: flex;
-    margin-left: 70px;
-    margin-top: 50px;
+	display: flex;
+	margin-left: 70px;
+	margin-top: 50px;
 }
 
 .box {
-    height: 300px;
-    width: 650px;
-    margin-left: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
-    background-color: var(--dark-color);
-    font-size: 30px;
-    overflow: hidden;
-    word-wrap: break-word;
+	height: 300px;
+	width: 650px;
+	margin-left: 20px;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: var(--dark-color);
+	font-size: 30px;
+	overflow: hidden;
+	word-wrap: break-word;
 }
 
 .table-container {
-    height: 250px;
-    width: 300px;
-    margin-right: 150px;
-    overflow: scroll;
+	height: 250px;
+	width: 300px;
+	margin-right: 150px;
+	overflow: scroll;
 }
 
 .table {
-    background: rgba(0,0,0,0.5);
-    border-radius: 10px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
 }
 
 .factInput {
-    height: 30px;
-    width: 60%;
-    margin-left: 35px;
-    margin-bottom: 100px;
+	height: 30px;
+	width: 60%;
+	margin-left: 35px;
+	margin-bottom: 100px;
 }
 
 .save {
-    transform: translateY(-12%);
-    margin-left: 35px;
-    background-color: var(--dark-color);
-    border: solid;
+	transform: translateY(-12%);
+	margin-left: 35px;
+	background-color: var(--dark-color);
+	border: solid;
+}
+
+.inputNumber {
+	transform: translateY(-12%);
+	margin-left: 35px;
+	background-color: var(--dark-color);
+	border: solid;
 }
 
 .currentDate {

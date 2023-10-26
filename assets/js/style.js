@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 	// Function to fetch and display data for a given number and type
 	function fetchDataAndDisplay(type) {
-		var apiUrl = `http://numbersapi.com/${number}/${type}?json`;
+		var apiUrl = `https://numbersapi.com/${number}/${type}?json`;
 
 		fetch(apiUrl)
 			.then((response) => {

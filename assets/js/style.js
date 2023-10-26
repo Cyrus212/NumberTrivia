@@ -1,7 +1,6 @@
 //Code doesn't run until page is finished rendering all elements
 $(document).ready(function () {
 
-	var facts = JSON.parse(localStorage.getItem("Facts")) || [];
 	//For dayJs time display
 	const displayDate = () => {
 		const currentDate = dayjs().format("MMMM D, YYYY");
@@ -74,6 +73,13 @@ $(document).ready(function () {
 			$("tbody").append(`<tr><td> ${factNumber} ${savedText} </td></tr>`);
 			$("#userFact").val("");
 		}
+	});
+
+	const saveButton = document.getElementById("save");
+	const favDialog = document.getElementById("saveDialog");
+
+	saveButton.addEventListener("click", () => {
+		favDialog.showModal();
 	});
 
      //On click, infoBox will clear, data from table will display, and repeat clicks will be disabled 

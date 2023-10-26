@@ -66,6 +66,10 @@ tbody {
 	border-radius: 10px;
 }
 
+tr:hover {
+    cursor: pointer;
+}
+
 .factInput {
 	height: 30px;
 	width: 60%;

@@ -1,5 +1,6 @@
 //Code doesn't run until page is finished rendering all elements
 $(document).ready(function () {
+
 	//For dayJs time display
 	const displayDate = () => {
 		const currentDate = dayjs().format("MMMM D, YYYY");
@@ -57,11 +58,11 @@ $(document).ready(function () {
 
 	//Save button on-click event function
 	$(".save").on("click", function () {
-		var numberClass = $(`.info${number}`).attr("class");
-		var saveText = $("#userFact").val();
-		localStorage.setItem(numberClass, saveText);
-		$("tbody").append(`<tr><td> ${factNumber}: ${saveText} </td></tr>`);
-		$("#userFact").val("");
+			var numberClass = $(`.info${number}`).attr("class");
+			var saveText = $("#userFact").val();
+			localStorage.setItem(numberClass, saveText);
+			$("tbody").append(`<tr><td> ${factNumber}: ${saveText} </td></tr>`);
+			$("#userFact").val(""); 
 	});
 
 	$(".inputNumber").on("click", function () {
@@ -80,4 +81,20 @@ $(document).ready(function () {
 	saveButton.addEventListener("click", () => {
 		favDialog.showModal();
 	});
+
+     //On click, infoBox will clear, data from table will display, and repeat clicks will be disabled 
+  $('tbody').on('click', 'td:not(.disabled)', function () {
+    $('.infoBox').html('');
+    var rowData = $(this).text();
+
+    $('.infoBox').append(rowData);
+
+    $(this).addClass("disabled");
+  });
+
+  //Button will clear infoBox when clicked
+  $('#clear').on('click', function () {
+    $('tr').remove();
+  });
+
 });

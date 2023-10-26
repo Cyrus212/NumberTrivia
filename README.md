@@ -13,3 +13,9 @@ To use our application you can get trivia and random facts by clicking on one of
 You can also add your own fact to that number by typing it in the text box and clicking save!
 
 <img width="1440" alt="Screenshot 2023-10-25 at 7 00 16 PM" src="https://github.com/Cyrus212/NumberTrivia/assets/90412259/0e847e9e-a551-4702-9e00-e6c675c05283">
+
+
+## Links
+
+https://cyrus212.github.io/NumberTrivia/
+https://github.com/Cyrus212/NumberTrivia
